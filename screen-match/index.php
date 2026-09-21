@@ -1,61 +1,22 @@
 <?php
 
-require __DIR__ . "/src/Modelo/Filme.php";
-require __DIR__ . "/src/funcoes.php";
+require_once __DIR__ . "/src/Modelo/Filme.php";
 
-echo "Bem-vindo(a) ao screen match!\n";
 
-$nomeFilme = "Top Gun - Maverick";
+echo "Bem vindo ao Screen-Match!";
 
-$anoLancamento = 2022;
+$filme = new Filme();
 
-$quantidadeDeNotas = $argc - 1;
-$notas = [];
+$filme->nome = "Thor - Ragnarock";
+$filme->anoLancamento = 2021;
+$filme->genero = "super-heroi";
 
-for ($contador = 1; $contador < $argc; $contador++) {
-    $notas[] = (float) $argv[$contador];
-}
+$filme->avalia(4);
+$filme->avalia(2);
+$filme->avalia(7.8);
+$filme->avalia(7.2);
 
-$notaFilme = array_sum($notas) / $quantidadeDeNotas;
-$planoPrime = true;
 
-$incluidoNoPlano = incluidoNoPlano($planoPrime, $anoLancamento);
+var_dump($filme);
 
-echo "Nome do filme: " . $nomeFilme . "\n";
-echo "Nota do filme: $notaFilme\n";
-echo "Ano de lançamento: $anoLancamento\n";
-
-exibeMensagemLancamento($anoLancamento);
-
-$genero = match ($nomeFilme) {
-    "Top Gun - Maverick" => "ação",
-    "Thor: Ragnarok" => "super-herói",
-    "Se beber não case" => "comédia",
-    default => "gênero desconhecido",
-};
-
-echo "O gênero do filme é: $genero\n";
-
-$filme = criaFilme(
-    nota: 7.8,
-    genero: "super-herói",
-    anoLancamento: 2021,
-    nome: "Thor: Ragnarok",
-);
-
-echo $filme->anoLancamento;
-
-var_dump($notas);
-sort($notas);
-var_dump($notas);
-$menorNota = min($notas);
-var_dump($menorNota);
-
-var_dump($filme->nome);
-$posicaoDoisPontos = strpos($filme->nome, ':');
-var_dump($posicaoDoisPontos);
-
-var_dump(substr($filme->nome, 0, $posicaoDoisPontos));
-
-$filmeComoStringJson = json_encode($filme);
-file_put_contents(__DIR__ . '/filme.json', $filmeComoStringJson);
+echo $filme->media();
