@@ -24,4 +24,19 @@ class Filme {
     public function setAnoLancamento(int $anoLancamento): void {
         $this->anoLancamento = $anoLancamento;
     }
+
+    public function getNome(): string {
+        return $this->nome;
+    }
+    public function setNome(string $nome) {
+        $this->nome = $nome;
+    }
+
+    public function getGenero(): string {
+        return $this->genero;
+    }
+
+    public function setGenero(string $genero): void {
+        $this->genero = $genero;
+    }
 }
