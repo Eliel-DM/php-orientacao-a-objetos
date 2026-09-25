@@ -5,11 +5,11 @@ require_once __DIR__ . "/src/Modelo/Filme.php";
 
 echo "Bem vindo ao Screen-Match!";
 
-$filme = new Filme();
-
-//$filme->nome = "Thor - Ragnarock";
-//$filme->anoLancamento = 2021;
-//$filme->genero = "super-heroi";
+$filme = new Filme(
+    'Thor - Ragnarock',
+    2021,
+    'super-heroi'
+);
 
 $filme->avalia(4);
 $filme->avalia(2);
@@ -21,7 +21,4 @@ var_dump($filme);
 
 echo $filme->media() . "\n";
 
-
-
-$filme->setAnoLancamento(2020);
 echo $filme->getAnoLancamento() . "\n";
