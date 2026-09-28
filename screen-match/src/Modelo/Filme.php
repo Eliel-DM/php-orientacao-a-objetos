@@ -4,13 +4,10 @@ class Filme {
     private array $notas;
 
     public function __construct(
-        private string $nome,
-        private int $anoLancamento,
-        private string $genero
+        public readonly string $nome,
+        public readonly int $anoLancamento,
+        public readonly string $genero
     ) {
-        $this->nome = $nome;
-        $this->anoLancamento = $anoLancamento;
-        $this->genero = $genero;
         $this->notas = [];
     }
 
