@@ -22,16 +22,4 @@ class Filme {
 
         return $somaNotas / $quantidadeNotas;
     }
-
-    public function getAnoLancamento(): int {
-        return $this->anoLancamento;
-    }
-
-    public function getNome(): string {
-        return $this->nome;
-    }
-
-    public function getGenero(): Genero {
-        return $this->genero;
-    }
 }
