@@ -6,7 +6,7 @@ class Filme {
     public function __construct(
         public readonly string $nome,
         public readonly int $anoLancamento,
-        public readonly string $genero
+        public readonly Genero $genero
     ) {
         $this->notas = [];
     }
@@ -31,7 +31,7 @@ class Filme {
         return $this->nome;
     }
 
-    public function getGenero(): string {
+    public function getGenero(): Genero {
         return $this->genero;
     }
 }
