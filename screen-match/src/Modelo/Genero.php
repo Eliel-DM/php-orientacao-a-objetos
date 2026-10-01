@@ -7,4 +7,5 @@ enum Genero {
     case Comeia;
     case Terror;
     case SuperHeroi;
+    case Drama;
 }
