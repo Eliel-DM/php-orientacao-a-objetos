@@ -5,7 +5,7 @@ class ContaBancaria {
     public function __construct(
 
         public readonly string $nomeTitular,
-        private int $saldo,
+        public int $saldo,
         public readonly bool $pessoaComDeficiencia,
     ) {
     }
