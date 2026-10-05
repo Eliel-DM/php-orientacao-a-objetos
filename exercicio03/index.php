@@ -1,21 +1,20 @@
 <?php
 
 require_once __DIR__ . "/ContaBancaria.php";
+require_once __DIR__ . "/ContaCorrente.php";
 
-$contaEliel = new ContaBancaria("Eliel", 0, false);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
+$contaCorrenteEliel = new ContaCorrente("Eliel", 0, TRUE);
 
-$contaEliel->depositar(1000);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
+// Caso a pessoa seja PCD ela receberá desconto e os saques não terão taxas;
 
-$contaEliel->sacar(50);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
+if ()
+    //if (get)
+echo "O valor base de saque para a conta informada é de: " . $contaCorrenteEliel->cobrarTarifaMensal() . "R$" . PHP_EOL;
 
-$contaEliel = new ContaBancaria("Eliel", 0, false);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
 
-$contaEliel->depositar(1000);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
 
-$contaEliel->sacar(50);
-echo $contaEliel->consultarSaldo() . PHP_EOL;
+$contaCorrenteEliel->depositar(100);
+$contaCorrenteEliel->consultarSaldo();
+
+$contaCorrenteEliel->sacar(10);
+$contaCorrenteEliel->consultarSaldo();
