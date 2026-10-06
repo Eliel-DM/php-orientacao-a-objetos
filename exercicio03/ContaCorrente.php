@@ -16,15 +16,9 @@ class ContaCorrente extends ContaBancaria {
     public function cobrarTarifaMensal(): int {
 
         if ($this->pessoaComDeficiencia) {
-            return 0;
+            return $this->saldo;
         }
-        return self::VALOR_TARIFA_MENSAL;
-
-        /*
-            Implementar e validar uma forma para poder realizar a leitura de forma mensal com validações concretas.
-            $dataArmazenada = new DateTime();
-            var_dump($dataArmazenada);
-             */
+        return $this->saldo -= self::VALOR_TARIFA_MENSAL;
     }
 
     public function sacar(int $valorASerSacado): void {
